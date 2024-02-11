@@ -1,5 +1,6 @@
 from config import key
 import requests #web
+import Mic-To-Text.py
 
 def chat1(chat):
     messages = [] # list which all meassages
@@ -12,8 +13,9 @@ def chat1(chat):
 
     t1 = response.json()
     print(t1)
-    t1.get("candidates")[0].get("content").get("parts")[0].get("text")
+    t2 = t1.get("candidates")[0].get("content").get("parts")[0].get("text")
+    print(t2)
 
-
-chat = "who is ms dhoni"  #pip install requests
+chat = input("Enter The Prompt: ")
+#chat = "who is ms dhoni"  #pip install requests
 chat1(chat) 
